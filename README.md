@@ -6,6 +6,7 @@ A website will be used to facilities the functioning of Lee’s Summit Soccer Li
 Users:
 The business model involves: Administrators and Fans
 General Requirements (Process): 
+
 1.The Fan will be able to 
 •	Login to system to access information 
 •	Learn about the team Lee’s Summit Soccer Lions.
