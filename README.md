@@ -11,11 +11,11 @@ General Requirements (Process):
 •	Login to system to access information 
 •	Learn about the team Lee’s Summit Soccer Lions.
 •	Make a credit card contribution for tickets
--	System should capture credit information (name, CVV, expiration date and billing address). If approved the name, address, transaction date and amount should be stored.
+       -	System should capture credit information (name, CVV, expiration date and billing address). If approved the name, address, transaction date and amount should be stored.
 •	View the details of team schedules in American Soccer League.
 •	Shop for  Soccer goodies 
--	Jerseys
--	Credit Card Contribution will be captured. If approved the name, address, transaction date and amount should be stored.
+       -	Jerseys
+        -Credit Card Contribution will be captured. If approved the name, address, transaction date and amount should be stored.
          
 
 2. The Administrator will be able to 
@@ -23,8 +23,8 @@ General Requirements (Process):
 •	Create and edit fan accounts
 •	Create and edit team schedules, scores, players and tickets for the tournaments 
 •	Pulls reports 
--	Team Schedule
--	Tickets
+      -	Team Schedule
+       -	Tickets
 •	Maintain Shopping goodies 
 
 Technology/tool to be used
