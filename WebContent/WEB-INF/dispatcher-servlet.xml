@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+   
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+            	<prop key="/data.htm">data_c</prop>
+                <prop key="/page.htm">page_c</prop>
+                <prop key="/user.htm">user_c</prop>
+                <prop key="/login.htm">login_c</prop>
+                <prop key="/job.htm">job_c</prop>
+                <prop key="/userHome.htm">home_c</prop>
+                <prop key="/admin.htm">admin_c</prop>
+                <prop key="/schdul.htm">schdul_c</prop>
+                <prop key="/payment.htm">payment_c</prop>
+                <prop key="/ticket.htm">ticket_c</prop>
+                <prop key="/tktdata.htm">tktdata_c</prop>
+                <prop key="/usrdata.htm">usrdata_c</prop>
+                <prop key="/paydata.htm">paydata_c</prop>
+                <prop key="/viewtktdata.htm">viewtktdata_c</prop>
+                <prop key="/prodata.htm">prodata_c</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="data_c" class="com.kgm.controller.DATA"/>
+    <bean name="tktdata_c" class="com.kgm.controller.TICKETDATA"/>
+    <bean name="viewtktdata_c" class="com.kgm.controller.VIEWTICKETDATA"/>
+    <bean name="usrdata_c" class="com.kgm.controller.USERDATA"/>
+    <bean name="prodata_c" class="com.kgm.controller.PRODUCTDATA"/>
+    <bean name="page_c" class="com.kgm.controller.PageController"/>
+     <bean name="home_c" class="com.kgm.controller.HOME_PAGE"/>
+     <bean name="admin_c" class="com.kgm.controller.ADMIN_HOME_PAGE"/>
+     <bean name="paydata_c" class="com.kgm.controller.PAYMENTDATA"></bean>
+     <bean id="ticketDaoImp" class="com.kgm.dao.imp.TicketDaoImp"></bean>
+     <bean id="ticketServiceImp" class="com.kgm.service.imp.TicketServiceImp">
+	     <property name="ticketDao">
+	        <ref bean="ticketDaoImp"/>
+	     </property>
+     </bean>
+     <bean name="ticket_c" class="com.kgm.controller.TicketController">
+     	<property name="ticketService">
+	      <ref bean="ticketServiceImp"/>
+	     </property>
+     </bean>
+     
+     <bean id="paymentDaoImp" class="com.kgm.dao.imp.PaymentDaoImp"></bean>
+     <bean id="paymentServiceImp" class="com.kgm.service.imp.PaymentServiceImp">
+     	<property name="paymentDao">
+     		<ref bean="paymentDaoImp"/>
+     	</property>
+     </bean>
+     <bean name="payment_c" class="com.kgm.controller.PaymentController">
+     	<property name="paymentService">
+     		<ref bean="paymentServiceImp"/>
+     	</property>
+     </bean>
+     <bean id="scheduleDaoImp" class="com.kgm.dao.imp.ScheduleDaoImp">
+     </bean>
+     <bean id="scheduleServiceImp" class="com.kgm.service.imp.ScheduleServiceImp">
+     	<property name="scheduleDao">
+     		<ref bean="scheduleDaoImp"/>
+     	</property>
+     </bean>
+     <bean name="schdul_c" class="com.kgm.controller.ScheduleController">
+     	<property name="scheduleService">
+     		<ref bean="scheduleServiceImp"/>
+     	</property>
+     </bean>
+     
+     
+	<bean id="userDaoImp" class="com.kgm.dao.imp.UserDaoImp"></bean>
+	<bean id="userServiceImp" class="com.kgm.service.imp.UserServiceImp">
+		<property name="userDao">
+			<ref bean="userDaoImp"/>
+		</property>
+	</bean>
+	<bean name="user_c" class="com.kgm.controller.UserController">
+		<property name="userService">
+			<ref bean="userServiceImp"/>
+		</property>
+	</bean>
+	<bean id="loginDaoImp" class="com.kgm.dao.imp.LoginDaoImp"></bean>
+	<bean id="loginServiceImp" class="com.kgm.service.imp.LoginServiceImp">
+		<property name="loginDao">
+			<ref bean="loginDaoImp"/>
+		</property>
+	</bean>
+	<bean name="login_c" class="com.kgm.controller.LoginController">
+		<property name="loginService">
+			<ref bean="loginServiceImp"/>
+		</property>
+	</bean>
+	<bean id="jobDaoImp" class="com.kgm.dao.imp.JobDaoImp"></bean>
+	<bean id="jobServiceImp" class="com.kgm.service.imp.JobServiceImp">
+		<property name="jobDao">
+			<ref bean="jobDaoImp"/>
+		</property>
+	</bean>
+	<bean name="job_c" class="com.kgm.controller.JobController">
+		<property name="jobService">
+			<ref bean="jobServiceImp"/>
+		</property>
+	</bean>
+</beans>

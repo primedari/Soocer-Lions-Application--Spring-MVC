@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+   </property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+   </property>
+
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost/club
+   </property>
+		<property name="hibernate.connection.username">
+			root
+   </property>
+		<property name="hibernate.connection.password">
+			pri
+   </property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- List of XML mapping files -->
+		<mapping class="com.kgm.bean.User" />
+		<mapping class="com.kgm.bean.ScheduleMatch" />
+		<mapping class="com.kgm.bean.Payment" />
+		<mapping class="com.kgm.bean.Ticket" />
+		<mapping class="com.kgm.bean.Product" />
+	</session-factory>
+</hibernate-configuration>
