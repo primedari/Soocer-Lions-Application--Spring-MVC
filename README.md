@@ -11,11 +11,11 @@ General Requirements (Process):
 •	Login to system to access information 
 •	Learn about the team Lee’s Summit Soccer Lions.
 •	Make a credit card contribution for tickets
-       -	System should capture credit information (name, CVV, expiration date and billing address). If approved the name, address, transaction date and amount should be stored.
+       -	System should capture credit information (name, CVV, expiration date and billing address). If approved the name, address, transaction date and amount is stored.
 •	View the details of team schedules in American Soccer League.
 •	Shop for  Soccer goodies 
        -	Jerseys
-        -Credit Card Contribution will be captured. If approved the name, address, transaction date and amount should be stored.
+        -Credit Card Contribution will be captured. If approved the name, address, transaction date and amount is stored.
          
 
 2. The Administrator will be able to 
@@ -28,5 +28,5 @@ General Requirements (Process):
 •	Maintain Shopping goodies 
 
 Technology/tool to be used
-The system will be a web based application that will be developed using Spring MVC , Hibernate, J2EE, jQuery ,Ajax, HTML,CSS, 
+The system is a web based application that is developed using Spring MVC , Hibernate, J2EE, jQuery ,Ajax, HTML,CSS, 
 JavaScript ,Tomcat and My SQL databases.
